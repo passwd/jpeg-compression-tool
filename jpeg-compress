@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+logger "jpeg-compress: script loaded"
+
+files="$@"
+
+for f in $files
+do
+    logger "jpeg-compress: $f"
+    $(jpegoptim -m 70 $f)
+done
+
+exit
